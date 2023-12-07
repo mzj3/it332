@@ -1,0 +1,720 @@
+/* DEVELOPER: Maximilian Jacob, IS117-001, Fall 2023 */
+html {
+    height: 100%;
+    font-size: 120%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* -----------------------------COLOR VARIABLES--------------------------------- */
+:root {
+    /* Primary and Secondary Colors + more*/
+    --primary: rgb(54, 57, 93);
+    --secondary: rgb(96, 89, 155);
+    --p-text: rgb(225, 225, 225);
+
+    /* Gradient Colors */
+    --dGradient: var(--primary);
+    --lGradient: rgb(0, 0, 0);
+
+
+    /* --primary: rgb(54, 57, 93);
+    --secondary: rgb(96, 89, 155); */
+}
+
+/* -----------------------------ANIMATION ORDER--------------------------------- */
+.homePage {
+    --aniDelay: 1.0s;
+    /* Adjust this value for different base delay start */
+
+}
+
+.interiorPage {
+    --aniDelay: 0s;
+    /* Adjust this value for different base delay start */
+
+}
+
+.aniOrder1 {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards, slideIn 3s ease-out;
+    animation-delay: calc(var(--aniDelay) + 1s);
+}
+
+.aniOrder2 {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, slideIn 3s ease-out;
+    animation-delay: calc(var(--aniDelay) + 2s);
+}
+
+.aniOrder3 {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, slideIn 3s ease-out;
+    animation-delay: calc(var(--aniDelay) + 3s);
+}
+
+.aniOrder4 {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, slideIn 3s ease-out;
+    animation-delay: calc(var(--aniDelay) + 4s);
+}
+
+.aniOrder5 {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, slideIn 3s ease-out;
+    animation-delay: calc(var(--aniDelay) + 5s);
+}
+
+.aniOrder6 {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, slideIn 3s ease-out;
+    animation-delay: calc(var(--aniDelay) + 6s);
+}
+
+/* WEB LOGO */
+#webtitle {
+    text-align: center;
+    font-size: 400%;
+    margin: 0 auto;
+}
+
+/* ----------------------------CUSTOM SCROLL BAR-------------------------- */
+/* Doesn't work on Firefox or Edge :( [Test in Chrome] */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+.poem {
+    overflow: scroll;
+    scrollbar-color: red orange;
+    scrollbar-width: thin;
+}
+
+/* -----------------------------HOMEPAGE TITLE ANIMATION ELEMENTS--------------------------------- */
+.title-span {
+    opacity: 0;
+    animation: fadeIn .5s ease-in-out forwards;
+}
+
+.title-span:nth-child(1) {
+    animation-delay: .5s;
+}
+
+.title-span:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.title-span:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* -----------------------------INTERIOR TITLE ANIMATION ELEMENTS--------------------------------- */
+.interior-title-span {
+    opacity: 0;
+    animation: fadeIn .5s ease-in-out forwards;
+}
+
+/* -----------------------------NAVBAR ELEMENTS--------------------------------- */
+nav {
+    height: 70px;
+}
+.homeNav {
+    /* height: 70px; */
+    width: 95%;
+    margin: 0 auto;
+    opacity: 0;
+    background-color: var(--secondary);
+    animation: fadeIn .5s ease-in-out forwards;
+    animation-delay: 1.75s;
+}
+
+.interiorNav {
+    /* height: 70px; */
+    width: 95%;
+    margin: 0 auto;
+    opacity: 0;
+    background-color: var(--secondary);
+    animation: fadeIn .5s ease-in-out forwards;
+    animation-delay: .25s;
+}
+
+.nav-item {
+    color: var(--p-text);
+}
+
+
+/* Override Bootstrap default text color for navbar links */
+.navbar-nav .nav-link {
+    color: var(--p-text) !important;
+}
+
+.nav-link {
+    font-size: 110%;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    transition: color 0.2s, font-size 0.2s, text-shadow 0.2s, box-shadow 0.3s;
+    animation: fadeIn 1s ease-in-out forwards, slideIn 1s ease-out;
+    animation-delay: 1s;
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255);
+    font-size: 125%;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    box-shadow: inset 120px 0 0 0 #ffffff1a;
+    transition: .2s;
+}
+
+.navbar-toggler {
+    color: var(--primary) !important;
+    border: none;
+}
+
+/* -----------------------------NAVBAR ANIMATION--------------------------------- */
+.home-navani-base {
+    --base-delay: 2.0s;
+    /* Adjust this value for different base delay start */
+
+}
+
+.interior-navani-base {
+    --base-delay: .25s;
+    /* Adjust this value for different base delay start */
+
+}
+
+.navbar-nav .current {
+
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.navani1 {
+    animation-delay: calc(var(--base-delay) + 0.1s);
+}
+
+.navani2 {
+    animation-delay: calc(var(--base-delay) + 0.2s);
+}
+
+.navani3 {
+    animation-delay: calc(var(--base-delay) + 0.3s);
+}
+
+.navani4 {
+    animation-delay: calc(var(--base-delay) + 0.4s);
+}
+
+.navani5 {
+    animation-delay: calc(var(--base-delay) + 0.5s);
+}
+
+.navani6 {
+    animation-delay: calc(var(--base-delay) + 0.6s);
+}
+
+/* -----------------------------DROPDOWN ELEMENTS--------------------------------- */
+.dropdown-menu {
+    background-color: var(--primary);
+    /* Background color */
+    border: none;
+    /* Remove default border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle box shadow */
+    opacity: 0;
+    /* Start with zero opacity */
+    animation: fadeInDropdown 0.25s ease-in-out forwards;
+    z-index: 1000;
+    position: absolute;
+}
+
+.dropdown-item {
+    opacity: 1;
+    color: var(--p-text);
+    /* Text color */
+    z-index: 1000;
+}
+
+.dropdown-item:hover {
+    opacity: 1;
+    color: var(--p-text);
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Background color on hover */
+    z-index: 1000;
+
+}
+
+/* ------------------------------------------------- Background --------------------------------------- */
+body {
+    display: block !important;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: relative;
+
+
+    background: linear-gradient(-45deg, var(--dGradient) 0%, var(--lGradient) 100%);
+
+    /* Good ratio for Desktop */
+    background-size: 900% 2200%; 
+    animation: gradientInf 90s ease-in-out infinite;
+}
+
+/* ----------------------------------------Main content on Page -------------------------------------------------*/
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+main h2,
+main h4,
+main h6 {
+    opacity: 1;
+    color: var(--secondary);
+
+}
+
+main p {
+    color: var(--p-text);
+    opacity: 1;
+
+}
+
+main h2,
+main h4,
+main h6,
+main p {
+    width: 70%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+main .bullet {
+    color: var(--p-text);
+    opacity: 0;
+    width: 70%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+main hr {
+    padding-bottom: 20px;
+    color: var(--secondary);
+    width: 65%;
+    margin: 0 auto;
+}
+/* ALT CSS */
+img { 
+    color: var(--p-text);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.interior-img {
+    width: 70%;
+}
+
+.career-img {
+    width: 20%;
+}
+
+.education-img {
+    width: 50%;
+}
+
+.instructionsMobile {
+    display: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.instructionsDesktop {
+    display: block;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.picture2 {
+    display: none;
+}
+
+.thumbnail {
+    width: 60%;
+}
+
+.thumbnail:hover .picture1 {
+    display: none;
+}
+
+.thumbnail:hover .picture2 {
+    display: block;
+}
+
+/* -------Form Stuff------ */
+main form {
+    color: var(--p-text);
+    width: 70%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+main form input {
+    color: var(--p-text);
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+}
+
+.web-links {
+    color: var(--secondary);
+    transition: .5s;
+}
+
+.web-links:hover {
+    color: var(--p-text);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transition: .75s;
+}
+
+
+h5 a {
+    color: white;
+}
+
+h5 a:hover {
+    color: var(--secondary);
+}
+
+cp {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, slideIn 2s ease-out;
+    animation-delay: 1s;
+}
+
+/* Custom styles for the card */
+.custom-card {
+    max-width: 790px;
+    background-color: var(--primary);
+    /* Custom background color */
+    border: none;
+    /* Custom border color */
+    border-radius: 10px;
+    /* Custom border radius */
+    margin-bottom: 0px;
+    /* Custom margin */
+}
+
+.custom-card .card-body {
+    padding: 10px;
+}
+
+.custom-card .card-title {
+    color: var(--p-text);
+    /* Custom text color for the title */
+    font-size: 1.5rem;
+    /* Custom font size for the title */
+}
+
+.custom-card img {
+    border-top-left-radius: 10px;
+    /* Adjust rounded corners for the image */
+    border-bottom-left-radius: 10px;
+    max-height: 100%;
+
+}
+
+.custom-card .card-text {
+    color: var(--p-text);
+    /* Custom text color for the content */
+}
+
+.custom-card .card-body h5,
+.custom-card .card-body p {
+    margin-left: 10px;
+}
+
+.custom-card {
+    margin-left: 10px;
+    color: var(--p-text);
+    text-align: left;
+}
+
+.image-container {
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.858);
+    /* Adjust background color and opacity as needed */
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.carousel-indicators {
+    transform: translateY(-10px);
+}
+
+/* Styles for the social media icons */
+footer a,
+footer span {
+    color: white !important;
+    /* Text color for the links */
+
+}
+
+
+/* Hover effect for the links */
+footer a:hover {
+    color: var(--primary);
+    /* Change the color on hover to a different one if desired */
+}
+
+/* ------------------------------------------------------CUSTOM FONT--------------------------------------------- */
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('UbuntuMono-R.ttf') format('truetype');
+    /* Specify the correct format */
+}
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* ------------------------------------------------------ANIMATION KEYFRAMES--------------------------------------------- */
+/* Define the fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* Start with zero opacity */
+
+    }
+
+    to {
+        opacity: 1;
+        /* End with full opacity */
+        z-index: 1;
+    }
+}
+
+@keyframes fadeInDropdown {
+    0% {
+        opacity: 0;
+        /* Start with zero opacity */
+        transform: translate(10px, 0px);
+    }
+
+    40% {
+        opacity: .5;
+        /* End with full opacity */
+        transform: translate(5px, 10px);
+    }
+
+    100% {
+        opacity: 1;
+        /* End with full opacity */
+        transform: translate(0px, 0px);
+        z-index: 1000;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(200%);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateY(0%);
+        z-index: 1;
+    }
+}
+
+@keyframes gradientInf {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientIntro {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.carousel-caption {
+    display: contents;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+
+    /*Set for Quicker animation mobile*/
+    .home-navani-base {
+        --base-delay: 0.0s;
+        /* Adjust this value for different base delay start */
+
+    }
+
+    .interior-navani-base {
+        --base-delay: 0s;
+        /* Adjust this value for different base delay start */
+
+    }
+
+    /* Make Logo smaller */
+    #webtitle {
+        font-size: 250%;
+    }
+
+    nav {
+        height: auto;
+    }
+
+    .nav-link {
+        padding-left: 10px;
+        margin: 0 auto;
+    }
+
+    .nav-link:hover {
+        box-shadow: inset 140px 0 0 0 #ffffff1a;
+    }
+
+    .dropdown-menu {
+        background-color: var(--secondary);
+        /* Background color */
+        border: none;
+        /* Remove default border */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Add a subtle box shadow */
+        opacity: 0;
+        /* Start with zero opacity */
+        animation: fadeInDropdown 0.0s ease-in-out forwards;
+        border-radius: 0;
+    }
+
+    .navbar-light .navbar-collapse.show {
+        background-color: var(--primary);
+        transition: 1.5s;
+    }
+
+    body {
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(-45deg, var(--lGradient) 0%, var(--dGradient) 100%);
+        background-size: 900% 2200%;
+    }
+
+    /* Adjust the width for smaller screens */
+    main h2,
+    main h4,
+    main h6,
+    main p {
+        width: 80%;
+    }
+
+    main h2,
+    main h4,
+    main h6 {
+        text-align: center;
+    }
+
+    main p {
+        font-size: 100%;
+    }
+
+    .custom-card {
+        max-width: 90%;
+        /* Custom background color */
+        border: none;
+        /* Custom border color */
+        border-radius: 10px;
+        /* Custom border radius */
+        margin-bottom: 2px;
+        /* Custom margin */
+    }
+
+    .interior-img {
+        width: 90%;
+    }
+
+    .career-img {
+        width: 30%;
+    }
+
+    .education-img {
+        width: 70%;
+    }
+
+    .custom-card img {
+        border-radius: none;
+    }
+
+    .carousel-caption {
+        display: contents;
+    }
+
+    .carousel-indicators {
+        transform: translateY(4px);
+    }
+
+    cp {
+        font-size: 80%;
+    }
+
+    hr {
+        color: var(--secondary);
+        width: 80%;
+        margin: 0 auto;
+
+    }
+
+    footer a,
+    footer span {
+        color: white !important;
+        font-size: 75%;
+        /* Text color for the links */
+
+    }
+
+    .thumbnail {
+        width: 90%;
+    }
+
+    .instructionsMobile {
+        display: block;
+        font-size: 60%;
+    }
+    .instructionsDesktop {
+        display: none;
+    }
+    
+}
